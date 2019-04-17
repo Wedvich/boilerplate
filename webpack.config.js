@@ -1,0 +1,20 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
+require('dotenv').config();
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const isProduction = process.env.NODE_ENV === 'production';
+
+module.exports = {
+  mode: isProduction ? 'production' : 'development',
+  entry: './src/index.tsx',
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
+  ],
+  devServer: {
+    hot: !isProduction,
+  },
+};

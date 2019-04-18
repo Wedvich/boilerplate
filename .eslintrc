@@ -15,6 +15,7 @@
   },
   "plugins": ["@typescript-eslint"],
   "env": {
-    "browser": true
+    "browser": true,
+    "jest": true
   }
 }

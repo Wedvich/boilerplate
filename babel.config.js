@@ -3,7 +3,7 @@ module.exports = api => {
 
   const presets = ['@babel/env', '@babel/typescript', '@babel/react'];
 
-  const plugins = ['@babel/proposal-class-properties', '@babel/proposal-object-rest-spread'];
+  const plugins = ['@babel/proposal-class-properties', '@babel/proposal-object-rest-spread', 'react-hot-loader/babel'];
 
   return {
     presets,

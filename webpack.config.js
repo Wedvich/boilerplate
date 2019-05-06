@@ -36,6 +36,9 @@ module.exports = {
     }),
   ],
   devServer: {
+    historyApiFallback: true,
     hot: !isProduction,
+    open: true,
+    stats: 'minimal',
   },
 };

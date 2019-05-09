@@ -1,4 +1,5 @@
 module.exports = {
+  eslintIntegration: true,
   printWidth: 120,
   semi: true,
   singleQuote: true,

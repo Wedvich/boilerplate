@@ -30,7 +30,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
-      'react-dom': '@hot-loader/react-dom',
+      'react-dom': !isProduction ? '@hot-loader/react-dom' : 'react-dom',
     },
   },
   plugins: [
@@ -39,6 +39,7 @@ module.exports = {
     }),
   ],
   devServer: {
+    compress: isProduction,
     historyApiFallback: true,
     hot: !isProduction,
     http2: true,

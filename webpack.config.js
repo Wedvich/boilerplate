@@ -13,6 +13,7 @@ if (!isProduction) {
 
 module.exports = {
   mode: isProduction ? 'production' : 'development',
+  devtool: isProduction ? 'source-map' : 'eval-source-map',
   entry,
   module: {
     rules: [

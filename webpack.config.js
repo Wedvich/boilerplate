@@ -41,6 +41,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     hot: !isProduction,
+    http2: true,
     open: true,
     stats: 'minimal',
   },

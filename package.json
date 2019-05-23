@@ -7,7 +7,8 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --hot",
     "prod": "cross-env NODE_ENV=production webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack",
-    "test": "jest --coverage --coverage-reporters=lcov"
+    "test": "jest --coverage --coverage-reporters=lcov",
+    "test:ci": "jest --ci --coverage --coverage-reporters=lcov"
   },
   "repository": {
     "type": "git",

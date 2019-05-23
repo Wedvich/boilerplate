@@ -3,10 +3,6 @@ language: node_js
 node_js:
   - "node"
   - "lts/*"
-  
-cache:
-  directories:
-    - node_modules
 
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
@@ -18,7 +14,4 @@ script:
   - npm run build
 
 after_script:
-  - ./cc-test-reporter after-build --coverage-input-type lcov --debug --exit-code $TRAVIS_TEST_RESULT
-
-on:
-  branch: master
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

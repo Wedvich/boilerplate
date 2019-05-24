@@ -3,20 +3,20 @@ My own Webpack + React + TypeScript boilerplate for personal projects.
 
 Start the development server with hot reloading enabled:
 ```
-npm start
+yarn start
 ```
 
 Start the development server running a production build without hot reloading:
 ```
-npm run prod
+yarn prod
 ```
 
 Build a production bundle:
 ```
-npm run build
+yarn build
 ```
 
-Run unit tests:
+Run unit tests and generate coverage:
 ```
-npm test
+yarn test
 ```

@@ -7,6 +7,7 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --hot",
     "prod": "cross-env NODE_ENV=production webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack",
+    "build:analyze": "cross-env NODE_ENV=production ANALYZE=true webpack",
     "test": "jest --coverage --coverage-reporters=lcov",
     "test:ci": "jest --ci --coverage --coverage-reporters=lcov",
     "test:watch": "jest --watch --coverage --coverage-reporters=lcov"
@@ -51,10 +52,12 @@
     "eslint-plugin-react": "^7.13.0",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.8.0",
+    "jest-watch-typeahead": "^0.3.1",
     "prettier": "^1.17.1",
     "style-loader": "^0.23.1",
     "typescript": "^3.4.5",
     "webpack": "^4.32.2",
+    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.4.1"
   }

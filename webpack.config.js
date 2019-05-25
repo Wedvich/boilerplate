@@ -2,13 +2,33 @@
 
 require('dotenv').config();
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const HtmlPlugin = require('html-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
 const entry = ['./src/index.tsx'];
 if (!isProduction) {
   entry.unshift('react-hot-loader/patch');
+}
+
+const plugins = [
+  new HtmlPlugin({
+    template: './src/index.html',
+  }),
+];
+
+if (process.env.ANALYZE) {
+  plugins.push(
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      defaultSizes: 'gzip',
+      generateStatsFile: true,
+      reportFilename: path.resolve(__dirname, 'analysis/report.html'),
+      statsFilename: path.resolve(__dirname, 'analysis/stats.json'),
+    }),
+  );
 }
 
 module.exports = {
@@ -34,11 +54,7 @@ module.exports = {
       'react-dom': !isProduction ? '@hot-loader/react-dom' : 'react-dom',
     },
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-    }),
-  ],
+  plugins,
   devServer: {
     compress: isProduction,
     historyApiFallback: true,

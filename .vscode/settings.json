@@ -2,5 +2,10 @@
   "editor.formatOnSave": false,
   "editor.rulers": [120],
   "eslint.autoFixOnSave": true,
-  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"]
+  "eslint.validate": [
+    { "language": "javascript", "autoFix": true, },
+    { "language": "javascriptreact", "autoFix": true },
+    { "language": "typescript", "autoFix": true },
+    { "language": "typescriptreact", "autoFix": true }
+  ]
 }
